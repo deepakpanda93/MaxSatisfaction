@@ -32,7 +32,7 @@ public class MaximumSatisfactionFinderAppApplicationTests {
 	public void init(){
 		timeArrayForDish = new int[]{12, 35, 40, 42,45};
 		satisfactionArr = new int[]{50, 100, 110, 80,60};
-		totalItems = 4;
+		totalItems = 5;
 	}
 
 	
