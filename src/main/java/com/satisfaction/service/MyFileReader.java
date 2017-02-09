@@ -24,7 +24,7 @@ public class MyFileReader {
 	 * @param fileName
 	 * @return FileData
 	 */
-	public FileData parseRestaurantFile(String fileName) throws Exception {
+	public FileData ReadDataFile(String fileName) throws Exception {
 
 		if (StringUtils.isEmpty(fileName)) {
 			throw new FileNotFoundException("Could not find file: " + fileName);
@@ -52,9 +52,7 @@ public class MyFileReader {
 	
 			int[] timeForDishArr = new int[fileData.gettotalMenuItems()];
 			int[] satisfactionArr = new int[fileData.gettotalMenuItems()];
-			/*
-			 * Reading each line of the file
-			 */
+			
 			for (int i=0;i<= fileData.gettotalMenuItems();i++) {
 				val = br.readLine();
 				if (val == null)

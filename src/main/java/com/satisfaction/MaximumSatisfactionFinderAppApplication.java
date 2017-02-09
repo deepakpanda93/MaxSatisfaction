@@ -14,8 +14,8 @@ public class MaximumSatisfactionFinderAppApplication {
 		SpringApplication.run(MaximumSatisfactionFinderAppApplication.class, args);
 		FindMaxSatisfaction fms = new  FindMaxSatisfaction();
 		MyFileReader reader = new MyFileReader();
-		FileData fdata = reader.parseRestaurantFile("timeAndsatisfactionFile.txt");
+		FileData fdata = reader.ReadDataFile("timeAndsatisfactionFile.txt");
 		int maxSatisfaction = fms.findMaxSatisfaction(fdata.gettotalGivenTime(), fdata.gettimeForDishArr(), fdata.getsatisfactionArr(), fdata.gettotalMenuItems());
-		System.out.printf("Maximum Satisfaction is : ", maxSatisfaction);
+		System.out.println("Maximum Satisfaction is : " + maxSatisfaction);
 	}
 }

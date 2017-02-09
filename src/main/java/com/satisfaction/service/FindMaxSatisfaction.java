@@ -13,7 +13,7 @@ public class FindMaxSatisfaction {
 	 *
 	 * This code is based on knapSack algorithm dynamic programming.
 	 *
-	 * @param maxGivenTime: The maximum Givem time that should be taken to have dishes
+	 * @param maxGivenTime: The maximum Given time that should be taken to have dishes
 	 * @param timeTaken: The array which contains the time taken for each dish
 	 * @param satisfaction: The array which contains the amount of satisfaction
 	 * @param noOfItems: total no of dishes

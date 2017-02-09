@@ -12,7 +12,8 @@ import com.satisfaction.service.FindMaxSatisfaction;
 import com.satisfaction.service.MyFileReader;
 import com.satisfaction.vo.FileData;
 
-import junit.framework.Assert;
+//import junit.framework.Assert;
+import org.junit.Assert;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -33,7 +34,7 @@ public class MaximumSatisfactionFinderAppApplicationTests {
 	@Test
 	public final void testParseRestaurantFile() throws Exception{
 		MyFileReader reader = new MyFileReader();
-		FileData fileData = reader.parseRestaurantFile("timeAndsatisfactionFile.txt");
+		FileData fileData = reader.ReadDataFile("timeAndsatisfactionFile.txt");
 		Assert.assertEquals(16808, fileData.getsatisfactionArr()[0]);
 		Assert.assertEquals(250, fileData.gettimeForDishArr()[0]);
 	}
@@ -51,22 +52,22 @@ public class MaximumSatisfactionFinderAppApplicationTests {
 	@Test
 	public final void testFindMaxSatisfaction2(){
 
-		int maxGivenTime = 40;
+		int maxGivenTime = 60;
 
 		FindMaxSatisfaction fms = new FindMaxSatisfaction();
 
 		int maxSatisfaction = fms.findMaxSatisfaction(maxGivenTime, arrayTimeTaken, arraySatisfaction, totalItems);
-		Assert.assertEquals(305, maxSatisfaction);
+		Assert.assertEquals(405, maxSatisfaction);
 	}
 	
 	@Test(expected = FileNotFoundException.class)
     public final void whenFileNameIsPassedEmpty() throws Exception {
-        new MyFileReader().parseRestaurantFile("");
+        new MyFileReader().ReadDataFile("");
     }
 
 	@Test
     public final void NoExceptionWhenFileExist() throws Exception {
-        new MyFileReader().parseRestaurantFile("timeAndsatisfactionFile.txt");
+        new MyFileReader().ReadDataFile("timeAndsatisfactionFile.txt");
         Assert.assertTrue(true);
     }
 
