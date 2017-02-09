@@ -25,6 +25,8 @@ public class MaximumSatisfactionFinderAppApplicationTests {
 	
 	@Autowired
 	private DataFileReader filereader;
+	@Autowired
+	private FindMaxSatisfaction max;
 			
 	@Before
 	public void init(){
@@ -43,22 +45,15 @@ public class MaximumSatisfactionFinderAppApplicationTests {
 
 	@Test
 	public final void testFindMaxSatisfaction(){
-
 		int totalGivenTime = 55;
-		FindMaxSatisfaction fms = new FindMaxSatisfaction();
-
-		int maxSatisfaction = fms.findMaxSatisfaction(totalGivenTime, timeArrayForDish, satisfactionArr, totalItems);
+		int maxSatisfaction = max.findMaxSatisfaction(totalGivenTime, timeArrayForDish, satisfactionArr, totalItems);
 		Assert.assertEquals(160, maxSatisfaction);
 	}
 
 	@Test
 	public final void testFindMaxSatisfaction2(){
-
 		int totalGivenTime = 60;
-
-		FindMaxSatisfaction fms = new FindMaxSatisfaction();
-
-		int maxSatisfaction = fms.findMaxSatisfaction(totalGivenTime, timeArrayForDish, satisfactionArr, totalItems);
+		int maxSatisfaction = max.findMaxSatisfaction(totalGivenTime, timeArrayForDish, satisfactionArr, totalItems);
 		Assert.assertEquals(160, maxSatisfaction);
 	}
 	

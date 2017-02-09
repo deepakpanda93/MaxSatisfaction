@@ -1,11 +1,14 @@
 package com.satisfaction.service;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 
  * This is containing the logic to find the maximum satisfactionArr value from a
  * given list.
  *
  */
+@Component
 public class FindMaxSatisfaction {
 
 
