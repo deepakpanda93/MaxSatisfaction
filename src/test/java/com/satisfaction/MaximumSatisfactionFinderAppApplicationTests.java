@@ -42,11 +42,11 @@ public class MaximumSatisfactionFinderAppApplicationTests {
 	@Test
 	public final void testFindMaxSatisfaction(){
 
-		int maxGivenTime = 42;
+		int maxGivenTime = 25;
 		FindMaxSatisfaction fms = new FindMaxSatisfaction();
 
 		int maxSatisfaction = fms.findMaxSatisfaction(maxGivenTime, arrayTimeTaken, arraySatisfaction, totalItems);
-		Assert.assertEquals(305, maxSatisfaction);
+		Assert.assertEquals(200, maxSatisfaction);
 	}
 
 	@Test

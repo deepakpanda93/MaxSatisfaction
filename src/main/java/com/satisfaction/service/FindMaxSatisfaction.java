@@ -17,20 +17,19 @@ public class FindMaxSatisfaction {
 	 * @param timeTaken: The array which contains the time taken for each dish
 	 * @param satisfaction: The array which contains the amount of satisfaction
 	 * @param noOfItems: total no of dishes
-	 * @return
 	 */
 	private int knapSackAlgorithm(int maxGivenTime, int timeTaken[], int satisfaction[], int noOfItems) {
         int [][]arrSatisfactionAndTime = new int[noOfItems+1][maxGivenTime+1];
 
-        for (int index = 0; index <= noOfItems; index++) {
-            for (int capacity = 0; capacity <= maxGivenTime; capacity++) {
-                if (index==0 || capacity==0)
-                    arrSatisfactionAndTime[index][capacity] = 0;
-                else if (timeTaken[index-1] <= capacity){
-                    arrSatisfactionAndTime[index][capacity] = findMaxValue(satisfaction[index-1] + arrSatisfactionAndTime[index-1][capacity-timeTaken[index-1]],  arrSatisfactionAndTime[index-1][capacity]);
+        for (int i = 0; i <= noOfItems; i++) {
+            for (int t = 0; t <= maxGivenTime; t++) {
+                if (i==0 || t==0)
+                    arrSatisfactionAndTime[i][t] = 0;
+                else if (timeTaken[i-1] <= t){
+                    arrSatisfactionAndTime[i][t] = findMaxValue(satisfaction[i-1] + arrSatisfactionAndTime[i-1][t-timeTaken[i-1]],  arrSatisfactionAndTime[i-1][t]);
                 }
                 else{
-                    arrSatisfactionAndTime[index][capacity] = arrSatisfactionAndTime[index-1][capacity];
+                    arrSatisfactionAndTime[i][t] = arrSatisfactionAndTime[i-1][t];
                 }
             }
         }
