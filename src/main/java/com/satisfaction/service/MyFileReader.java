@@ -3,7 +3,6 @@ package com.satisfaction.service;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.springframework.util.StringUtils;
@@ -27,7 +26,7 @@ public class MyFileReader {
 	public FileData ReadDataFile(String fileName) throws Exception {
 
 		if (StringUtils.isEmpty(fileName)) {
-			throw new FileNotFoundException("Could not find file: " + fileName);
+			throw new RuntimeException("Could not find file: " + fileName);
 		}
 
 		FileData fileData = new FileData();

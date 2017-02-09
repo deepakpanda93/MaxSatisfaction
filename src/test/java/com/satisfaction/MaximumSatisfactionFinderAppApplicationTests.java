@@ -1,6 +1,5 @@
 package com.satisfaction;
 
-import java.io.FileNotFoundException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -60,8 +59,8 @@ public class MaximumSatisfactionFinderAppApplicationTests {
 		Assert.assertEquals(405, maxSatisfaction);
 	}
 	
-	@Test(expected = FileNotFoundException.class)
-    public final void whenFileNameIsPassedEmpty() throws Exception {
+	@Test(expected = RuntimeException.class)
+    public final void emptyFileName() throws Exception {
         new MyFileReader().ReadDataFile("");
     }
 
