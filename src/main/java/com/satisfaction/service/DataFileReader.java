@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import com.satisfaction.vo.FileData;
 
@@ -13,7 +14,8 @@ import com.satisfaction.vo.FileData;
  * This class is reading the data from the file. This class is used to generate
  * the FileData object after taking data from the file.
  */
-public class MyFileReader {
+@Component
+public class DataFileReader {
 	
 	/**
 	 * This method reads the data from the file. Each line in the file is the
@@ -26,7 +28,7 @@ public class MyFileReader {
 	public FileData ReadDataFile(String fileName) throws Exception {
 
 		if (StringUtils.isEmpty(fileName)) {
-			throw new RuntimeException("Could not find file: " + fileName);
+			throw new RuntimeException("File Name can't be blank");
 		}
 
 		FileData fileData = new FileData();
